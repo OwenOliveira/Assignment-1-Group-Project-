@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 #include "main.h"
 #include "triangleSolver.h"
@@ -43,15 +44,25 @@ void printWelcome() {
 }
 
 int printShapeMenu() {
-	printf_s("1. Triangle\n");
-	printf_s("0. Exit\n");
 
 	int shapeChoice;
 
-	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
+	do
+	{
+		printf_s("1. Triangle\n");
+		printf_s("0. Exit\n");
+		printf_s("Enter number: ");
+		scanf_s("%1o", &shapeChoice);
+		if (shapeChoice == 0 || shapeChoice == 1)	// return 'shapeChoice' when shapeChoice is 1 or 0
+			return shapeChoice;						// and leave the loop
 
-	return shapeChoice;
+		else			//else display error msg and get input agian.
+		{
+			puts("You may not enter a number\nPlease enter a number next time.\n");
+			rewind(stdin);		// reset the input buffer 
+		}
+	} while (true);
+
 }
 
 int* getTriangleSides(int* triangleSides) {
