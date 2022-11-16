@@ -66,10 +66,27 @@ int printShapeMenu() {
 }
 
 int* getTriangleSides(int* triangleSides) {
-	printf_s("Enter the three sides of the triangle: ");
+	printf_s("Enter the three sides of the triangle\n");
 	for (int i = 0; i < 3; i++)
 	{
-		scanf_s("%d", &triangleSides[i]);
+		do
+		{
+			// display the side that a user enters
+			if (i == 0)
+				printf("First side: ");
+			else if (i == 1)
+				printf("Second side: ");
+			else
+				printf("Third side: ");
+
+			if (scanf_s("%d", &triangleSides[i]) != true)		// if a user enters something that is not a number,
+			{													// display error msg and clear the buffer for the next input. 
+				puts("Invalid input. Please try again.");		// 
+				rewind(stdin);
+			}
+			else
+				break;											// if the user enters valid input break the loop (Note. I don't want to use 'break', please give me some ideas)
+		} while (true);
 	}
-	return triangleSides;
+	return triangleSides;										// return the triangle array that the user entered
 }
