@@ -4,10 +4,14 @@
 
 #include "main.h"
 #include "triangleSolver.h"
+#include "rectangleSolver.h"
 
 int side = 0;
 
 int main() {
+
+	struct rectanglepoints points[NUMPOINT];        //array of structures
+
 	bool continueProgram = true;
 	while (continueProgram) {
 		printWelcome();
@@ -25,6 +29,15 @@ int main() {
 			printf_s("%s\n", result);
 			anglesOfTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			break;
+
+		case 2:  //added case 2 to the switch statement for the rectangle
+			printf_s("Rectangle selected.\n");
+			getRectanglePoints(points, NUMPOINT);
+
+			/*char* ifrectangle = analyzeRectangle(points);
+			printf_s("%s\n", ifrectangle);*/
+			break;
+
 		case 0:
 			continueProgram = false;
 			break;
@@ -51,15 +64,16 @@ int printShapeMenu() {
 	do
 	{
 		printf_s("1. Triangle\n");
+		printf_s("2 Rectangle\n");  //added the rectnagle option to the menu
 		printf_s("0. Exit\n");
 		printf_s("Enter number: ");
 		scanf_s("%1o", &shapeChoice);
-		if (shapeChoice == 0 || shapeChoice == 1)	// return 'shapeChoice' when shapeChoice is 1 or 0
+		if (shapeChoice == 0 || shapeChoice == 1 || shapeChoice == 2)	// return 'shapeChoice' when shapeChoice is 1 or 0
 			return shapeChoice;						// and leave the loop
 
 		else			//else display error msg and get input agian.
 		{
-			puts("You may not enter a number\nPlease enter a number next time.\n");
+			puts("The input is not valid, please try again.\n");
 			rewind(stdin);		// reset the input buffer 
 		}
 	} while (true);
