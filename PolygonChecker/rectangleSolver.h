@@ -7,3 +7,6 @@ struct rectanglepoints   //created a data structure for the 4 points of rectangl
 	double point_x;
 	double point_y;
 };
+
+
+// test 
