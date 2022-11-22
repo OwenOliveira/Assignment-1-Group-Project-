@@ -54,3 +54,12 @@ void getRectanglePoints(struct rectanglepoints pointarr[], int n)
 
 
 
+float perimeterRectangle(float sideLengthA, float sideLengthB, float sideLengthC, float sideLengthD)
+
+{
+	float perimeter = sideLengthA + sideLengthB + sideLengthC + sideLengthD;
+	printf("the perimeter of the rectangle is: %0.2f ", perimeter); // what unit are we using?
+}
+
+
+
