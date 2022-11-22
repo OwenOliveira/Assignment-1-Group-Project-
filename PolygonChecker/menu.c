@@ -17,7 +17,7 @@ int printShapeMenu() {
 	do
 	{
 		printf_s("1. Triangle\n");
-		printf_s("2 Rectangle\n");  //added the rectnagle option to the menu
+		printf_s("2. Rectangle\n");  //added the rectnagle option to the menu
 		printf_s("0. Exit\n");
 		printf_s("Enter number: ");
 		scanf_s("%1o", &shapeChoice);

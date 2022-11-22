@@ -30,7 +30,7 @@ int main() {
 		case 2:  //added case 2 to the switch statement for the rectangle
 			printf_s("Rectangle selected.\n");
 			getRectanglePoints(points, NUMPOINT);
-
+			isRectangle(points);
 			/*char* ifrectangle = analyzeRectangle(points);
 			printf_s("%s\n", ifrectangle);*/
 			break;
