@@ -3,6 +3,35 @@
 
 #include "triangleSolver.h"
 
+
+int* getTriangleSides(int* triangleSides) {
+	printf_s("Enter the three sides of the triangle\n");
+	for (int i = 0; i < 3; i++)
+	{
+		do
+		{
+			// display the side that a user enters
+			if (i == 0)
+				printf("First side: ");
+			else if (i == 1)
+				printf("Second side: ");
+			else
+				printf("Third side: ");
+
+			if (scanf_s("%d", &triangleSides[i]) != true)		// if a user enters something that is not a number,
+			{													// display error msg and clear the buffer for the next input. 
+				puts("Invalid input. Please try again.");		// 
+				rewind(stdin);
+			}
+			else
+				break;											// if the user enters valid input break the loop (Note. I don't want to use 'break', please give me some ideas)
+		} while (true);
+	}
+	return triangleSides;										// return the triangle array that the user entered
+}
+
+
+
 char* analyzeTriangle(int side1, int side2, int side3) {
 	char* result = "";
 	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
@@ -22,6 +51,8 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 
 	return result;
 }
+
+
 
 void anglesOfTriangle(int a, int b, int c)
 {
