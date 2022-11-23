@@ -52,7 +52,7 @@ namespace TriangleSolver
 	{
 	public:
 		
-		TEST_METHOD(Test1_analyzeTriangle_Equilateral_true)
+		TEST_METHOD(Test1_analyzeTriangle_Equilateral_true) 
 		{
 			int side1;
 			int side2;
@@ -92,8 +92,8 @@ namespace TriangleSolver
 			char* result;
 
 			side1 = 5;
-			side2 = 5;
-			side3 = 3;
+			side2 = 3;
+			side3 = 5;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -124,9 +124,9 @@ namespace TriangleSolver
 			int side3;
 			char* result;
 
-			side1 = 4;
-			side2 = 5;
-			side3 = 6;
+			side1 = 3;
+			side2 = 4;
+			side3 = 5;
 
 			result = analyzeTriangle(side1, side2, side3);
 
