@@ -1,7 +1,7 @@
 #pragma once
 #define NUMPOINT 4  // for the 4 points of rectangle 
 
-
+#include <stdio.h>
 #include <math.h>
 
 
