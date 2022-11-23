@@ -2,17 +2,19 @@
 #define NUMPOINT 4  // for the 4 points of rectangle 
 
 
+#include <math.h>
 
 
-struct rectanglepoints   //created a data structure for the 4 points of rectangle 
+
+typedef struct rectanglepoints   //created a data structure for the 4 points of rectangle 
 {
 	double point_x;
 	double point_y;
-};
+}POINTS;
 
-void getRectanglePoints(struct rectanglepoints pointarr[], int n);
-double rectangleDist(struct rectanglepoints p, struct rectanglepoints q);
-void isRectangle(struct rectanglepoints pointarr[]);
+void getRectanglePoints(POINTS pointarr[], int n);
+double rectangleDist(POINTS p, POINTS q);
+void isRectangle(POINTS pointarr[]);
 double perimeterRectangle(double, double, double, double);
 double CalculateArea(double dista, double distb);
 

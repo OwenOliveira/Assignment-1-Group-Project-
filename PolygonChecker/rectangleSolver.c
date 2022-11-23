@@ -1,7 +1,7 @@
 #include "rectangleSolver.h"
 
 
-void getRectanglePoints(struct rectanglepoints pointarr[], int n)
+void getRectanglePoints(POINTS pointarr[], int n)
 {
 	puts("Enter your 4 points: ");
 	for (int i = 0; i < n; i++)
@@ -52,12 +52,12 @@ void getRectanglePoints(struct rectanglepoints pointarr[], int n)
 	}
 }
 
-double rectangleDist(struct rectanglepoints p, struct rectanglepoints q) 
+double rectangleDist(POINTS p, POINTS q)
 {
-	return (p.point_x - q.point_x) * (p.point_x - q.point_x) + (p.point_y - q.point_y) * (p.point_y - q.point_y);
+	return sqrt((p.point_x - q.point_x) * (p.point_x - q.point_x) + (p.point_y - q.point_y) * (p.point_y - q.point_y));
 }
 
-void isRectangle(struct rectanglepoints pointarr[])
+void isRectangle(POINTS pointarr[])
 { 
 	double dist12 = rectangleDist(pointarr[0], pointarr[1]);     
 	double dist23 = rectangleDist(pointarr[1], pointarr[2]);
@@ -66,8 +66,9 @@ void isRectangle(struct rectanglepoints pointarr[])
 	double dist24 = rectangleDist(pointarr[1], pointarr[3]);
 	double dist13 = rectangleDist(pointarr[0], pointarr[2]);
 
-	if (dist12 == dist34 && dist14 == dist23 && dist24 == dist13 && dist12 != dist14) {
-		printf("\nThe points you entered make a rectangle.\nThe area of this rectange is %0.4lf.\nThe perimiter of this rectangle is %0.4lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
+	if ((dist12 == dist34) && (dist14 == dist23) && (dist24 == dist13) && (dist12 != dist14)) {
+		printf("\nThe points you entered make a rectangle.\nThe area of this rectange is %0.4lf.\nThe perimiter of this rectangle is %0.4lf\n",
+			CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
 	}
 	else
 		printf("\nThe points you entered do not make a rectangle.\n");
