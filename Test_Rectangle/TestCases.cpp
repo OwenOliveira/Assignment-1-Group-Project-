@@ -100,7 +100,7 @@ namespace TriangleSolver
 			Assert::AreEqual("Isosoles triangle", result);
 		}
 
-		TEST_METHOD(Test4_analyzeTriangle_Equilateral_false)
+		TEST_METHOD(Test4_analyzeTriangle_Isosoles_false)
 		{
 			int side1;
 			int side2;
@@ -113,7 +113,7 @@ namespace TriangleSolver
 
 			result = analyzeTriangle(side1, side2, side3);
 
-			Assert::AreNotEqual("Equilateral triangle", result);
+			Assert::AreNotEqual("Isosoles triangle", result);
 		}
 
 
@@ -133,7 +133,7 @@ namespace TriangleSolver
 			Assert::AreEqual("Scalene triangle", result);
 		}
 
-		TEST_METHOD(Test1_analyzeTriangle_Scalene_false)
+		TEST_METHOD(Test6_analyzeTriangle_Scalene_false)
 		{
 			int side1;
 			int side2;
@@ -150,7 +150,7 @@ namespace TriangleSolver
 		}
 
 
-		TEST_METHOD(Test1_analyzeTriangle_notTriangle_true)
+		TEST_METHOD(Test7_analyzeTriangle_notTriangle_true)
 		{
 			int side1;
 			int side2;
@@ -166,7 +166,7 @@ namespace TriangleSolver
 			Assert::AreEqual("Not A Triangle", result);
 		}
 
-		TEST_METHOD(Test1_analyzeTriangle_notTriangle_false) // is a triangle but false for this. 
+		TEST_METHOD(Test8_analyzeTriangle_notTriangle_false) // is a triangle but false for this. 
 		{
 			int side1;
 			int side2;
@@ -206,7 +206,7 @@ namespace AnglesOfTriangle
 		}
 
 
-		//TEST_METHOD(Test1_AnglesOfTrianglesTest_ _true)  // next test here 
+		//TEST_METHOD(Test2_AnglesOfTrianglesTest_ _false)  // next test here 
 		//{
 
 		//	float side1 = ;  // i feel like these should be float because it is math
