@@ -57,23 +57,14 @@ double rectangleDist(POINTS p, POINTS q)
 	return sqrt((p.point_x - q.point_x) * (p.point_x - q.point_x) + (p.point_y - q.point_y) * (p.point_y - q.point_y));
 }
 
-void isRectangle(POINTS pointarr[])
+
+bool isRectangle(double distA, double distB, double distC, double distD, double distE, double distF)
 { 
-	double dist12 = rectangleDist(pointarr[0], pointarr[1]);     
-	double dist23 = rectangleDist(pointarr[1], pointarr[2]);
-	double dist34 = rectangleDist(pointarr[2], pointarr[3]);
-	double dist14 = rectangleDist(pointarr[0], pointarr[3]);
-	double dist24 = rectangleDist(pointarr[1], pointarr[3]);
-	double dist13 = rectangleDist(pointarr[0], pointarr[2]);
-
-	if ((dist12 == dist34) && (dist14 == dist23) && (dist24 == dist13) && (dist12 != dist14)) {
-		printf("\nThe points you entered make a rectangle.\nThe area of this rectange is %0.4lf.\nThe perimiter of this rectangle is %0.4lf\n",
-			CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
-	}
+	if ((distA == distB) && (distC == distD) && (distE == distF) && (distA != distC))
+		return true;
 	else
-		printf("\nThe points you entered do not make a rectangle.\n");
+		return false;
 }
-
 
 
 double perimeterRectangle(double sideLengthA, double sideLengthB, double sideLengthC, double sideLengthD)
