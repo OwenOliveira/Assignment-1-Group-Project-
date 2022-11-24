@@ -4,7 +4,7 @@
 #include "triangleSolver.h"
 
 
-int* getTriangleSides(int* triangleSides) {
+double* getTriangleSides(double* triangleSides) {
 	printf_s("Enter the three sides of the triangle\n");
 	for (int i = 0; i < 3; i++)
 	{
@@ -12,13 +12,13 @@ int* getTriangleSides(int* triangleSides) {
 		{
 			// display the side that a user enters
 			if (i == 0)
-				printf("First side: ");
+				printf("First side(a): ");
 			else if (i == 1)
-				printf("Second side: ");
+				printf("Second side(b): ");
 			else
-				printf("Third side: ");
+				printf("Third side(c): ");
 
-			if (scanf_s("%d", &triangleSides[i]) != true)		// if a user enters something that is not a number,
+			if (scanf_s("%lf", &triangleSides[i]) != true)		// if a user enters something that is not a number,
 			{													// display error msg and clear the buffer for the next input. 
 				puts("Invalid input. Please try again.");		// 
 				rewind(stdin);
@@ -32,16 +32,18 @@ int* getTriangleSides(int* triangleSides) {
 
 
 
-char* analyzeTriangle(int side1, int side2, int side3) {
+char* analyzeTriangle(double a, double b, double c) {
 	char* result = "";
-	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+	// each side cannot be negative number, and the length of one side cannot be equal to or greater than the combined length of the other two sides.
+	if (a <= 0 || b <= 0 || c <= 0 || (a >= c + b) || (b >= a + c) || (c >= a + b))	
+	{
 		result = "Not a triangle\n";
 	}
-	else if (side1 == side2 && side1 == side3) {
+	else if (a == b && a == c) 
+	{
 		result = "Equilateral triangle\n";
 	}
-	else if ((side1 == side2 && side1 != side3) || 
-		(side1 == side3 && side1 != side2))
+	else if ((a == b && a != c) || (a == c && a != b))
 	{
 		result = "Isosceles triangle\n";
 	}
@@ -54,17 +56,17 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 
 
 
-void anglesOfTriangle(int a, int b, int c)
+void anglesOfTriangle(double a, double b, double c)
 {
-	double angleA, angleB, angleC, s;
-	const double PI = 3.1415926;
+	double angleA, angleB, angleC;
+	const double AnglePi = 180.0 / 3.1415926;
 
-	s = ((b * b) + (c * c) - (a * a)) / (2.0 * b * c);
-	angleA = acos(s) * 180.0 / PI;
-	angleB = acos(((a * a) + (c * c) - (b * b)) / (2.0 * a * c)) * (180.0 / PI);
-	angleC = acos(((b * b) + (a * a) - (c * c)) / (2.0 * b * a)) * 180.0 / PI;
 
-	printf("The angle between %d and %d is %g dgree.\n", b, c, angleA);
-	printf("The angle between %d and %d is %g dgree.\n", a, c, angleB);
-	printf("The angle between %d and %d is %g dgree.\n", b, a, angleC);
+	angleA = acos(((b * b) + (c * c) - (a * a)) / (2.0 * b * c)) * AnglePi;
+	angleB = acos(((a * a) + (c * c) - (b * b)) / (2.0 * a * c)) * AnglePi;
+	angleC = acos(((b * b) + (a * a) - (c * c)) / (2.0 * b * a)) * AnglePi;
+
+	printf("The angle \"A\" is %g dgree.\n", angleA);
+	printf("The angle \"B\" is %g dgree.\n", angleB);
+	printf("The angle \"C\" is %g dgree.\n", angleC);
 }

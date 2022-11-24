@@ -29,6 +29,7 @@ int printShapeMenu() {
 			puts("The input is not valid, please try again.\n");
 			rewind(stdin);		// reset the input buffer 
 		}
+
 	} while (true);
 
 }
