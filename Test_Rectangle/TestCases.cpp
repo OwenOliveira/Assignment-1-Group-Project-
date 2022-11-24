@@ -4,8 +4,8 @@
 extern "C" void isRectangle(POINTS pointarr[]);
 extern "C" double perimeterRectangle(double, double, double, double);
 extern "C" double CalculateArea(double dista, double distb);
-extern "C" char* analyzeTriangle(int side1, int side2, int side3);
-extern "C" void anglesOfTriangle(int a, int b, int c);
+extern "C" char* analyzeTriangle(double a, double b, double c);
+extern "C" void anglesOfTriangle(double a, double b, double c);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -194,15 +194,15 @@ namespace AnglesOfTriangle
 		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral_true)
 		{
  
-			float side1 = 6;  // i feel like these should be float because it is math
-			float side2 = 6;
-			float side3 = 6;
+			double side1 = 6;  // i feel like these should be float because it is math
+			double side2 = 6;
+			double side3 = 6;
 
-			float result = getAnglesOfTriangle(side1, side2, side3);
+			/*float result = */anglesOfTriangle(side1, side2, side3);
 
-			int sum = 180.f;
+			/*int sum = 180.f;
  
-			Assert::AllAreEqual(sum, result);
+			Assert::AllAreEqual(sum, result);*/
 		}
 
 
