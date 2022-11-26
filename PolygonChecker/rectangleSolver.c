@@ -1,7 +1,7 @@
 #include "rectangleSolver.h"
 
 
-void getRectanglePoints(POINTS pointarr[], int n)
+bool getRectanglePoints(POINTS pointarr[], int n)
 {
 	puts("Enter your 4 points: ");
 	for (int i = 0; i < n; i++)
@@ -15,7 +15,7 @@ void getRectanglePoints(POINTS pointarr[], int n)
 			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2) || ((pointarr[i].point_x < 0) || (pointarr[i].point_y < 0)))
 			{
 				puts("Invalid input, please try again");
-				break;
+				return false;
 			}
 		}
 
@@ -25,7 +25,7 @@ void getRectanglePoints(POINTS pointarr[], int n)
 			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2) || ((pointarr[i].point_x > 0) || (pointarr[i].point_y < 0)))
 			{
 				puts("Invalid input, please try again");
-				break;
+				return false;
 			}
 		}
 
@@ -35,7 +35,7 @@ void getRectanglePoints(POINTS pointarr[], int n)
 			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2) || ((pointarr[i].point_x > 0) || (pointarr[i].point_y > 0)))
 			{
 				puts("Invalid input, please try again");
-				break;
+				return false;
 			}
 		}
 
@@ -45,11 +45,11 @@ void getRectanglePoints(POINTS pointarr[], int n)
 			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2) || ((pointarr[i].point_x < 0) || (pointarr[i].point_y > 0)))
 			{
 				puts("Invalid input, please try again");
-				break;
+				return false;
 			}
 		}
-
 	}
+	return true;
 }
 
 double rectangleDist(POINTS p, POINTS q)
@@ -58,12 +58,12 @@ double rectangleDist(POINTS p, POINTS q)
 }
 
 
-bool isRectangle(double distA, double distB, double distC, double distD, double distE, double distF)
+char* isRectangle(double distA, double distB, double distC, double distD, double distE, double distF)
 { 
 	if ((distA == distB) && (distC == distD) && (distE == distF) && (distA != distC))
-		return true;
+		return "The points make a rectangle";
 	else
-		return false;
+		return "The points do NOT make a rectangle";
 }
 
 
@@ -71,7 +71,6 @@ double perimeterRectangle(double sideLengthA, double sideLengthB, double sideLen
 
 {
 	double perimeter = sideLengthA + sideLengthB + sideLengthC + sideLengthD;
-	//printf("the perimeter of the rectangle is: %0.2f ", perimeter); // what unit are we using?
 	return perimeter;
 }
 

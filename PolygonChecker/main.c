@@ -29,23 +29,31 @@ int main() {
 
 		case 2:  //added case 2 to the switch statement for the rectangle
 			printf_s("Rectangle selected.\n");
-			getRectanglePoints(points, NUMPOINT);
+			if (getRectanglePoints(points, NUMPOINT))
+			{
+				double dist12 = rectangleDist(points[0], points[1]);
+				double dist23 = rectangleDist(points[1], points[2]);
+				double dist34 = rectangleDist(points[2], points[3]);
+				double dist14 = rectangleDist(points[0], points[3]);
+				double dist24 = rectangleDist(points[1], points[3]);
+				double dist13 = rectangleDist(points[0], points[2]);
 
-			double dist12 = rectangleDist(points[0], points[1]);
-			double dist23 = rectangleDist(points[1], points[2]);
-			double dist34 = rectangleDist(points[2], points[3]);
-			double dist14 = rectangleDist(points[0], points[3]);
-			double dist24 = rectangleDist(points[1], points[3]);
-			double dist13 = rectangleDist(points[0], points[2]);
+				char* resultrectangle = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
 
-			if (!isRectangle(dist12, dist34, dist14, dist23, dist24, dist13))
-				printf("The points you entered do not make a rectangle.\nThe perimeter of these points is %lf\n", perimeterRectangle(dist12, dist23, dist34, dist14));  
-			else
-				printf("\nThe points you entered make a rectangle.\nThe area of this rectangle is % lf\nThe perimeter of this rectangle is % lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14)); 
-			
-			
-			/*char* ifrectangle = analyzeRectangle(points);
-			printf_s("%s\n", ifrectangle);*/
+
+				if (resultrectangle == "The points do NOT make a rectangle")
+				{
+					printf_s("%s\n", resultrectangle);
+					printf("\nThe perimeter of this shape is: %.2lf\n", perimeterRectangle(dist12, dist23, dist34, dist14));
+
+				}
+				else
+				{
+					printf_s("%s\n", resultrectangle);
+					printf("\nThe area of this rectangle is: %.2lf\nThe perimeter of this rectangle is %.2lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
+				}
+			}
+
 			break;
 
 		case 0:
