@@ -6,6 +6,6 @@
 #define TOTALANGLES 180
 
 
-char* analyzeTriangle(int side1, int side2, int side3);
+char* analyzeTriangle(double a, double b, double c);  // was int side 1/2/3 
 
-void anglesOfTriangle(int a, int b, int c);
+void anglesOfTriangle(double a, double b, double c);
