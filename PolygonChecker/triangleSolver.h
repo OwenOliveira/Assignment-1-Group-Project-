@@ -8,4 +8,4 @@
 
 char* analyzeTriangle(double a, double b, double c);  // was int side 1/2/3 
 
-void anglesOfTriangle(double a, double b, double c);
+void anglesOfTriangle(double a, double b, double c);  // was int side 1/2/3
