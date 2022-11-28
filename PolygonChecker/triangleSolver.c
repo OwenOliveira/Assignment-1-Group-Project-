@@ -64,7 +64,7 @@ void anglesOfTriangle(double a, double b, double c)
 
 	angleA = acos(((b * b) + (c * c) - (a * a)) / (2.0 * b * c)) * AnglePi;
 	angleB = acos(((a * a) + (c * c) - (b * b)) / (2.0 * a * c)) * AnglePi;
-	angleC = acos(((b * b) + (a * a) - (c * c)) / (2.0 * b * a)) * AnglePi;
+	angleC = 180.0 - (angleA + angleB);
 
 	printf("The angle \"A\" is %g dgree.\n", angleA);
 	printf("The angle \"B\" is %g dgree.\n", angleB);
