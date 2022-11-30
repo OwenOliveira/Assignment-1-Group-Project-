@@ -237,42 +237,52 @@ namespace TestCases
 	};
 }
 
-////
-//namespace AnglesOfTriangle
-//{
-//	TEST_CLASS(AnglesOfTriangle) // testing angles of triange for 180 (equilateral sides)
-//	{
-//	public:
-// 
-//		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral_true)
-//		{
-// 
-//			double side1 = 6;  // i feel like these should be float because it is math
-//			double side2 = 6;
-//			double side3 = 6;
-//
-//			/*float result = */anglesOfTriangle(side1, side2, side3);
-//
-//			/*int sum = 180.f;
-// 
-//			Assert::AllAreEqual(sum, result);*/
-//		}
-//
-//
-//		//TEST_METHOD(Test2_AnglesOfTrianglesTest_ _false)  // next test here 
-//		//{
-//
-//		//	float side1 = ;  // i feel like these should be float because it is math
-//		//	float side2 = ;
-//		//	float side3 = ;
-//
-//		//	float result = getAnglesOfTriangle(side1, side2, side3);
-//
-//		//	float sum = 180.f;
-//
-//		//	Assert::AllAreEqual(sum, result);
-//		//}
-//	}
-//
-//
-//}
+
+namespace AnglesOfTriangle
+{
+	TEST_CLASS(AnglesOfTriangle) // testing angles of triange for 180 (equilateral sides)
+	{
+	public:
+		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral_true)
+		{
+			double result;
+			double side1 = 4;  // i feel like these should be float because it is math
+			double side2 = 5;
+			double side3 = 6;
+			double result = anglesOfTriangle(side1, side2, side3);
+
+			int sum = 180.f;
+
+			Assert::AllAreEqual(sum, result);
+		}
+
+
+		TEST_METHOD(Test2_AnglesOfTrianglesTest_ _false)  // next test here 
+		{
+
+			double side1 = 5;  // i feel like these should be float because it is math
+			double side2 = 5;
+			double side3 = 3;
+
+			double result = getAnglesOfTriangle(side1, side2, side3);
+
+			int sum = 180.f;
+
+			Assert::AllAreEqual(sum, result);
+		}
+		TEST_METHOD(Test3_AnglesOfTrianglesTest_ _false)  // next test here 
+		{
+
+			double side1 = 5;  // i feel like these should be float because it is math
+			double side2 = 4;
+			double side3 = 3;
+
+			double result = getAnglesOfTriangle(side1, side2, side3);
+
+			int sum = 180.f;
+
+			Assert::AllAreEqual(sum, result);
+		}
+	};
+
+}

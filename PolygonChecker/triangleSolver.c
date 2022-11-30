@@ -69,4 +69,6 @@ void anglesOfTriangle(double a, double b, double c)
 	printf("The angle \"A\" is %g dgree.\n", angleA);
 	printf("The angle \"B\" is %g dgree.\n", angleB);
 	printf("The angle \"C\" is %g dgree.\n", angleC);
+
+	return angleA, angleB, angleC;
 }

@@ -12,9 +12,9 @@ int main() {
 	bool continueProgram = true;
 	while (continueProgram) {
 		printWelcome();
-
+		
 		int shapeChoice = printShapeMenu();
-
+		
 		switch (shapeChoice)
 		{
 		case 1:
