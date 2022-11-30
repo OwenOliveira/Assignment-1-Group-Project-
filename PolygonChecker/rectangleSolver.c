@@ -1,5 +1,5 @@
 #include "rectangleSolver.h"
-
+//#include <cmath>
 
 bool getRectanglePoints(POINTS pointarr[], int n)
 {
@@ -52,7 +52,7 @@ bool getRectanglePoints(POINTS pointarr[], int n)
 	return true;
 }
 
-double rectangleDist(POINTS p, POINTS q)
+double rectangleDist(POINTS p, POINTS q) //line connecting these points 
 {
 	return sqrt((p.point_x - q.point_x) * (p.point_x - q.point_x) + (p.point_y - q.point_y) * (p.point_y - q.point_y));
 }
