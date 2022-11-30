@@ -244,7 +244,6 @@ namespace AnglesOfTriangle
 	public:
 		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral_true)
 		{
-
 			double side1 = 6.0;
 			double side2 = 6.0;
 			double side3 = 6.0;
@@ -256,12 +255,11 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		TEST_METHOD(Test2_AnglesOfTrianglesTest_Equilateral_false)
+		TEST_METHOD(Test2_AnglesOfTrianglesTest_Equilateral_true)
 		{
-
-			double side1 = 2.0;
-			double side2 = 2.0;
-			double side3 = 4.0;
+			double side1 = 3.0;
+			double side2 = 4.0;
+			double side3 = 5.0;
 
 			double result = anglesOfTriangle(side1, side2, side3);
 
@@ -269,7 +267,70 @@ namespace AnglesOfTriangle
 
 			Assert::AreEqual(sum, result);
 		}
-		//Owen you can make more below or change above if you think its necessary
 
+		TEST_METHOD(Test3_AnglesOfTrianglesTest_Equilateral_false)
+		{
+			double side1 = 1.0;
+			double side2 = 5.0;
+			double side3 = 9.0;
+
+			double result = anglesOfTriangle(side1, side2, side3);
+
+			double sum = 180.0;
+
+			Assert::AreEqual(sum, result);
+		}
+
+		TEST_METHOD(Test4_AnglesOfTrianglesTest_Equilateral_true)
+		{
+			double side1 = 30.0;
+			double side2 = 40.0;
+			double side3 = 50.0;
+
+			double result = anglesOfTriangle(side1, side2, side3);
+
+			double sum = 180.0;
+
+			Assert::AreEqual(sum, result);
+		}
+
+		TEST_METHOD(Test5_AnglesOfTrianglesTest_Equilateral_false)
+		{
+			double side1 = 2.0;
+			double side2 = 2.0;
+			double side3 = 6.0;
+
+			double result = anglesOfTriangle(side1, side2, side3);
+
+			double sum = 180.0;
+
+			Assert::AreEqual(sum, result);
+		}
+
+		TEST_METHOD(Test6_AnglesOfTrianglesTest_Equilateral_true)
+		{
+			double side1 = 2.0;
+			double side2 = 4.0;
+			double side3 = 6.0;
+
+			double result = anglesOfTriangle(side1, side2, side3);
+
+			double sum = 180.0;
+
+			Assert::AreEqual(sum, result);
+		}
+
+		TEST_METHOD(Test7_AnglesOfTrianglesTest_Equilateral_false)
+		{
+			double side1 = -2.0;
+			double side2 = 4.0;
+			double side3 = -6.0;
+
+			double result = anglesOfTriangle(side1, side2, side3);
+
+			double sum = 180.0;
+
+			Assert::AreEqual(sum, result);
+		}
 	};
 }
