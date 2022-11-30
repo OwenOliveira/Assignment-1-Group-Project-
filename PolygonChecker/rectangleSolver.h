@@ -23,7 +23,7 @@ double CalculateArea(double dista, double distb);
 POINTS vectors(POINTS a, POINTS b);
 double dotproduct(POINTS a, POINTS b);
 double magnitude(POINTS a);
-//double dotproduct(double p, double q);
 double angle(double dotprod, double magA, double magB);
+void doThesePointsMakeARectangle(POINTS a, POINTS b, POINTS c, POINTS d);
 
 // test 

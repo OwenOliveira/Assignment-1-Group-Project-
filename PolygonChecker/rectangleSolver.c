@@ -104,3 +104,28 @@ double angle(double dotprod, double magA, double magB)
 	double angle = acos(dotprod / ((magA) * (magB)));
 	return angle;
 } 
+
+
+void doThesePointsMakeARectangle(POINTS a, POINTS b, POINTS c, POINTS d)
+{
+	double dist12 = rectangleDist(a, b);
+	double dist23 = rectangleDist(b, c);
+	double dist34 = rectangleDist(c, d);
+	double dist14 = rectangleDist(a, d);
+	double dist24 = rectangleDist(b, d);
+	double dist13 = rectangleDist(a, c);
+
+	char* resultrectangle = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
+
+	if (resultrectangle == "The points do NOT make a rectangle")
+	{
+		printf_s("%s\n", resultrectangle);
+		printf("\nThe perimeter of this shape is: %.2lf\n", perimeterRectangle(dist12, dist23, dist34, dist14));
+
+	}
+	else
+	{
+		printf_s("%s\n", resultrectangle);
+		printf("\nThe area of this rectangle is: %.2lf\nThe perimeter of this rectangle is %.2lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
+	}
+}

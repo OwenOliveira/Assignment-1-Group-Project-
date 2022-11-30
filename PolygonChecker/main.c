@@ -54,26 +54,8 @@ int main() {
 				POINTS point3 = points[3];
 				POINTS point4 = points[2];
 
-				double dist12 = rectangleDist(points[0], points[1]);
-				double dist23 = rectangleDist(points[1], points[2]);
-				double dist34 = rectangleDist(points[2], points[3]);
-				double dist14 = rectangleDist(points[0], points[3]);
-				double dist24 = rectangleDist(points[1], points[3]);
-				double dist13 = rectangleDist(points[0], points[2]);
-
-				char* resultrectangle = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
-
-				if (resultrectangle == "The points do NOT make a rectangle")
-				{
-					printf_s("%s\n", resultrectangle);
-					printf("\nThe perimeter of this shape is: %.2lf\n", perimeterRectangle(dist12, dist23, dist34, dist14));
-
-				}
-				else
-				{
-					printf_s("%s\n", resultrectangle);
-					printf("\nThe area of this rectangle is: %.2lf\nThe perimeter of this rectangle is %.2lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
-				}
+			
+				doThesePointsMakeARectangle(point1, point2, point3, point4); //this function finds the distance between these points, determines if these distances make up a rectangle and prints if they are a rectangle or not. I added this function to make the program more repetitive
 
 			}
 			else if (angle2 > angle1 && angle2 > angle3)
@@ -83,56 +65,17 @@ int main() {
 				POINTS point3 = points[2];
 				POINTS point4 = points[3];
 
-				double dist12 = rectangleDist(points[0], points[1]);
-				double dist23 = rectangleDist(points[1], points[2]);
-				double dist34 = rectangleDist(points[2], points[3]);
-				double dist14 = rectangleDist(points[0], points[3]);
-				double dist24 = rectangleDist(points[1], points[3]);
-				double dist13 = rectangleDist(points[0], points[2]);
+				doThesePointsMakeARectangle(point1, point2, point3, point4);
 
-				char* resultrectangle = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
-
-
-				if (resultrectangle == "The points do NOT make a rectangle")
-				{
-					printf_s("%s\n", resultrectangle);
-					printf("\nThe perimeter of this shape is: %.2lf\n", perimeterRectangle(dist12, dist23, dist34, dist14));
-
-				}
-				else
-				{
-					printf_s("%s\n", resultrectangle);
-					printf("\nThe area of this rectangle is: %.2lf\nThe perimeter of this rectangle is %.2lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
-				}
 			}
 			else if (angle3 > angle1 && angle3 > angle2)
 			{
-				POINTS point2_ = points[0];
-				POINTS point1_ = points[2];
-				POINTS point3_ = points[3];
-				POINTS point4_ = points[1];
+				POINTS point2 = points[0];
+				POINTS point1 = points[2];
+				POINTS point3 = points[3];
+				POINTS point4 = points[1];
 
-				double dist12 = rectangleDist(points[0], points[1]);
-				double dist23 = rectangleDist(points[1], points[2]);
-				double dist34 = rectangleDist(points[2], points[3]);
-				double dist14 = rectangleDist(points[0], points[3]);
-				double dist24 = rectangleDist(points[1], points[3]);
-				double dist13 = rectangleDist(points[0], points[2]);
-
-				char* resultrectangle = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
-
-
-				if (resultrectangle == "The points do NOT make a rectangle")
-				{
-					printf_s("%s\n", resultrectangle);
-					printf("\nThe perimeter of this shape is: %.2lf\n", perimeterRectangle(dist12, dist23, dist34, dist14));
-
-				}
-				else
-				{
-					printf_s("%s\n", resultrectangle);
-					printf("\nThe area of this rectangle is: %.2lf\nThe perimeter of this rectangle is %.2lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
-				}
+				doThesePointsMakeARectangle(point1, point2, point3, point4);
 			}
 			break;
 		case 0:
