@@ -20,9 +20,10 @@ double perimeterRectangle(double, double, double, double);
 double CalculateArea(double dista, double distb);
 
 
-double vectors(POINTS p, POINTS q);
-double magnitudeofthevector(POINTS v);
-double dotproduct(double p, double q);
-double AngleBetweenVectors(double dotprod, double mag1, double mag2);
+POINTS vectors(POINTS a, POINTS b);
+double dotproduct(POINTS a, POINTS b);
+double magnitude(POINTS a);
+//double dotproduct(double p, double q);
+double angle(double dotprod, double magA, double magB);
 
 // test 

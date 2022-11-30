@@ -80,3 +80,27 @@ double CalculateArea(double dista, double distb)
 	double area = (dista * distb);
 	return area;
 }
+
+POINTS vectors(POINTS a, POINTS b)
+{
+	POINTS vectors = { a.point_x - b.point_x, a.point_y - b.point_y };
+	return vectors;
+}
+
+double dotproduct(POINTS a, POINTS b)
+{
+	double dotproduct = (a.point_x * b.point_x) + (a.point_y * b.point_y);
+		return dotproduct;
+}
+
+double magnitude(POINTS a)
+{
+	double magnitude = sqrt((a.point_x * a.point_x) + (a.point_y * a.point_y));
+	return magnitude;
+}
+
+double angle(double dotprod, double magA, double magB)
+{
+	double angle = acos(dotprod / ((magA) * (magB)));
+	return angle;
+} 

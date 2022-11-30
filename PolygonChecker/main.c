@@ -59,35 +59,36 @@ int main() {
 			getRectanglePoints(points, NUMPOINT);
 			
 			printf("Vectors\n");
-			POINTS vector12 = { points[1].point_x - points[0].point_x, points[1].point_y - points[0].point_y };
+			POINTS vector12 = vectors(points[1], points[0]); // { points[1].point_x - points[0].point_x, points[1].point_y - points[0].point_y };
 			printf("(%f, %f)\n", vector12.point_x, vector12.point_y);
-			POINTS vector14 = { points[3].point_x - points[0].point_x, points[3].point_y - points[0].point_y };
+			POINTS vector14 = vectors(points[3], points[0]); // { points[3].point_x - points[0].point_x, points[3].point_y - points[0].point_y };
 			printf("(%f, %f)\n", vector14.point_x, vector14.point_y);
-			POINTS vector13 = { points[2].point_x - points[0].point_x, points[2].point_y - points[0].point_y };
+			POINTS vector13 = vectors(points[2], points[0]); // { points[2].point_x - points[0].point_x, points[2].point_y - points[0].point_y };
 			printf("(%f, %f)\n", vector13.point_x, vector13.point_y);
 
 			printf("Dotproducts\n");
-			double dotprod1214 = (vector12.point_x * vector14.point_x) + (vector12.point_y * vector14.point_y);//dotproduct(dist12, dist14);
-			printf("%f\n", dotprod1214);
-			double dotprod1213 = (vector12.point_x * vector13.point_x) + (vector12.point_y * vector13.point_y);
-			printf("%f\n", dotprod1213);
-			double dotprod1314 = (vector13.point_x * vector14.point_x) + (vector13.point_y * vector14.point_y);
-			printf("%f\n", dotprod1314);
+			double dotproduct1214 = dotproduct(vector12, vector14); // , POINTS b)
+			printf("%f\n", dotproduct1214);
+			double dotproduct1213 = dotproduct(vector12, vector13); // (vector12.point_x * vector13.point_x) + (vector12.point_y * vector13.point_y);
+			printf("%f\n", dotproduct1213);
+			double dotproduct1314 = dotproduct(vector13, vector14); // (vector13.point_x * vector14.point_x) + (vector13.point_y * vector14.point_y);
+			printf("%f\n", dotproduct1314);
 
 			printf("Magnitudes\n");
-			double magnitude12 = sqrt((vector12.point_x * vector12.point_x) + (vector12.point_y * vector12.point_y));
+			double magnitude12 = magnitude(vector12); // sqrt((vector12.point_x * vector12.point_x) + (vector12.point_y * vector12.point_y));
 			printf("%f\n", magnitude12);
-			double magnitude14 = sqrt((vector14.point_x * vector14.point_x) + (vector14.point_y * vector14.point_y));
+			double magnitude14 = magnitude(vector14); // sqrt((vector14.point_x * vector14.point_x) + (vector14.point_y * vector14.point_y));
 			printf("%f\n", magnitude14);
-			double magnitude13 = sqrt((vector13.point_x * vector13.point_x) + (vector13.point_y * vector13.point_y));
+			double magnitude13 = magnitude(vector13); // sqrt((vector13.point_x * vector13.point_x) + (vector13.point_y * vector13.point_y));
 			printf("%f\n", magnitude13);
 
 			printf("angles\n");
-			double angle1 = acos(dotprod1214 / ((magnitude12) * (magnitude14)));// AngleBetweenVectors(dotprod12, dist12, dist14);
+			double angle1 = angle(dotproduct1214, magnitude12, magnitude14); // acos(dotproduct1214 / ((magnitude12) * (magnitude14)));// AngleBetweenVectors(dotprod12, dist12, dist14);
 			printf("%g\n", angle1);
-			double angle2 = acos(dotprod1213 / ((magnitude12) * (magnitude13))); //AngleBetweenVectors(dotprod13, dist12, dist13);
+
+			double angle2 = angle(dotproduct1213, magnitude12, magnitude13); // acos(dotproduct1213 / ((magnitude12) * (magnitude13))); //AngleBetweenVectors(dotprod13, dist12, dist13);
 			printf("%g\n", angle2);
-			double angle3 = acos(dotprod1314 / ((magnitude13) * (magnitude14))); //AngleBetweenVectors(dotprod23, dist13, dist14);
+			double angle3 = angle(dotproduct1213, magnitude12, magnitude13); // acos(dotproduct1314 / ((magnitude13) * (magnitude14))); //AngleBetweenVectors(dotprod23, dist13, dist14);
 			printf("%g\n", angle3);
 
 			//Find largest
