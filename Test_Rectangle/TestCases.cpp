@@ -305,7 +305,7 @@ namespace AnglesOfTriangle
 		{
 			double side1 = 30.0;
 			double side2 = 40.0;
-			double side3 = 50.0;
+			double side3 = 40.0;
 
 			double result = anglesOfTriangle(side1, side2, side3);
 
@@ -337,7 +337,7 @@ namespace AnglesOfTriangle
 
 			double sum = 180.0;
 
-			Assert::AreEqual(sum, result);
+			Assert::AreNotEqual(sum, result);
 		}
 
 		TEST_METHOD(Test6_AnglesOfTrianglesTest_Equilateral)
@@ -350,7 +350,7 @@ namespace AnglesOfTriangle
 
 			double sum = 180.0;
 
-			Assert::AreEqual(sum, result);
+			Assert::AreNotEqual(sum, result);
 		}
 	};
 }

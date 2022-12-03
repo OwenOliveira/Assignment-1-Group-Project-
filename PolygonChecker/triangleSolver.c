@@ -70,28 +70,25 @@ char* analyzeTriangle(double a, double b, double c) {
 
 double anglesOfTriangle(double a, double b, double c)
 {
-	double sum;
+	double sum = 0;
 	double angleA, angleB, angleC;
 	const double AnglePi = 180.0 / 3.1415926;
 
-	if (a > 0 || b > 0 || c > 0 || longestSide(a, b, c) < ((a + b + c) - longestSide(a, b, c)))		// angles will be calculated when only it's a triangle,
+	if (a > 0 && b > 0 && c > 0 && longestSide(a, b, c) < ((a + b + c) - longestSide(a, b, c)))		// angles will be calculated when only it's a triangle,
 	{
 		angleA = acos(((b * b) + (c * c) - (a * a)) / (2.0 * b * c)) * AnglePi;
 		angleB = acos(((a * a) + (c * c) - (b * b)) / (2.0 * a * c)) * AnglePi;
 		angleC = 180.0 - (angleA + angleB);
 		sum = angleA + angleB + angleC;
-		if (angleA + angleB + angleC != 180)
-		{
-			printf("The sides entered do not form a triangle!\n");
-		}
-		else
-		{
-			printf("The angle \"A\" is %g dgree.\n", angleA);
-			printf("The angle \"B\" is %g dgree.\n", angleB);
-			printf("The angle \"C\" is %g dgree.\n", angleC);
 
-			return sum;
-		}
+		printf("The angle \"A\" is %g dgree.\n", angleA);
+		printf("The angle \"B\" is %g dgree.\n", angleB);
+		printf("The angle \"C\" is %g dgree.\n", angleC);
+
+		return sum;
+
 	}
-	
+	else			// not a triangle
+		return sum;	// sum = 0
+
 }
