@@ -70,6 +70,7 @@ char* analyzeTriangle(double a, double b, double c) {
 
 double anglesOfTriangle(double a, double b, double c)
 {
+	double sum;
 	double angleA, angleB, angleC;
 	const double AnglePi = 180.0 / 3.1415926;
 
@@ -78,13 +79,19 @@ double anglesOfTriangle(double a, double b, double c)
 		angleA = acos(((b * b) + (c * c) - (a * a)) / (2.0 * b * c)) * AnglePi;
 		angleB = acos(((a * a) + (c * c) - (b * b)) / (2.0 * a * c)) * AnglePi;
 		angleC = 180.0 - (angleA + angleB);
+		sum = angleA + angleB + angleC;
+		if (angleA + angleB + angleC != 180)
+		{
+			printf("Then angles you have entered don't make a triangle!\n");
+		}
+		else
+		{
+			printf("The angle \"A\" is %g dgree.\n", angleA);
+			printf("The angle \"B\" is %g dgree.\n", angleB);
+			printf("The angle \"C\" is %g dgree.\n", angleC);
 
-		printf("The angle \"A\" is %g dgree.\n", angleA);
-		printf("The angle \"B\" is %g dgree.\n", angleB);
-		printf("The angle \"C\" is %g dgree.\n", angleC);
-
-		return angleA + angleB + angleC;
+			return sum;
+		}
 	}
-	else									// else ruturn 0
-		return 0.0;
+	
 }
