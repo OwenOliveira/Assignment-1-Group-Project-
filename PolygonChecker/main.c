@@ -91,30 +91,3 @@ int main() {
 
 
 
-
-
-//Original rectangle function - this one is the lower points option 
-//if (getRectanglePoints(points, NUMPOINT))
-//{
-//	double dist12 = rectangleDist(points[0], points[1]);
-//	double dist23 = rectangleDist(points[1], points[2]);
-//	double dist34 = rectangleDist(points[2], points[3]);
-//	double dist14 = rectangleDist(points[0], points[3]);
-//	double dist24 = rectangleDist(points[1], points[3]);
-//	double dist13 = rectangleDist(points[0], points[2]);
-
-//	char* resultrectangle = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
-
-
-//	if (resultrectangle == "The points do NOT make a rectangle")
-//	{
-//		printf_s("%s\n", resultrectangle);
-//		printf("\nThe perimeter of this shape is: %.2lf\n", perimeterRectangle(dist12, dist23, dist34, dist14));
-
-//	}
-//	else
-//	{
-//		printf_s("%s\n", resultrectangle);
-//		printf("\nThe area of this rectangle is: %.2lf\nThe perimeter of this rectangle is %.2lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
-//	}
-//}

@@ -64,7 +64,7 @@ namespace TestCases
 	TEST_CLASS(TriangleTypeTestCases) // testing analyzeTriangle
 	{
 	public:
-		TEST_METHOD(Test1_analyzeTriangle_Functionality) // testing for Equilateral triangle
+		TEST_METHOD(Test1_analyzeTriangle_NotTriangle_Functionality) // testing for Equilateral triangle
 		{
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not, 
 			if yes what kind of triangle (should NOT form a triangle in this case)*/
@@ -83,7 +83,7 @@ namespace TestCases
 			Assert::AreEqual("Not a triangle\n", result);
 		}
 
-		TEST_METHOD(Test2_analyzeTriangle_Functionality) 
+		TEST_METHOD(Test2_analyzeTriangle_NotTriangle_Functionality)
 		{
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 			if yes what kind of triangle (should form a triangle in this case)*/
@@ -101,7 +101,7 @@ namespace TestCases
 
 			Assert::AreNotEqual("Not a triangle\n", result);
 		}
-		TEST_METHOD(Test3_analyzeTriangle_Functionality)
+		TEST_METHOD(Test3_analyzeTriangle_Equilateral_Functionality)
 		{
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 			if yes what kind of triangle (should form an equilateral triangle in this case)*/
@@ -139,7 +139,7 @@ namespace TestCases
 			Assert::AreNotEqual("Equilateral triangle\n", result);
 		}
 
-		TEST_METHOD(Test5_analyzeTriangle_Isosoles_Functionality)
+		TEST_METHOD(Test5_analyzeTriangle_Isosceles_Functionality)
 		{
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 			if yes what kind of triangle (should form an isosceles triangle in this case)*/
@@ -158,7 +158,7 @@ namespace TestCases
 			Assert::AreEqual("Isosceles triangle\n", result);
 		}
 
-		TEST_METHOD(Test6_analyzeTriangle_Isosoles_Functionality_True)
+		TEST_METHOD(Test6_analyzeTriangle_Isosceles_Functionality_True)
 		{
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 		    if yes what kind of triangle (should form an isosceles triangle in this case)*/
@@ -177,7 +177,7 @@ namespace TestCases
 			Assert::AreEqual("Isosceles triangle\n", result);
 		}
 
-		TEST_METHOD(Test7_analyzeTriangle_Isosoles_Functionality)
+		TEST_METHOD(Test7_analyzeTriangle_Isosceles_Functionality)
 		{
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 		    if yes what kind of triangle (should NOT form an isosceles triangle in this case)*/
@@ -239,7 +239,7 @@ namespace TestCases
 
 namespace AnglesOfTriangle
 {
-	TEST_CLASS(AnglesOfTriangle) // testing angles of triange for 180 (equilateral sides)
+	TEST_CLASS(AnglesOfTriangle) // testing angles of triangle for 180 (equilateral sides)
 	{
 	public:
 		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral_true)

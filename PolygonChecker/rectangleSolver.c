@@ -1,18 +1,16 @@
 #include "rectangleSolver.h"
 //#include <cmath>
 
-bool getRectanglePoints(POINTS pointarr[], int n)
+bool getRectanglePoints(POINTS pointarr[], int n)  //getRectanglePoints function definition, the points can be entered in any order
 {
 	puts("Enter your 4 points: "); //they can enter the points in any order they want
 	for (int i = 0; i < n; i++)
 	{
-
-		printf("Point %d (x,y)\n", i); // for quadrant% d ", i + 1, i + 1);
+		printf("Point %d (x,y)\n", i+1);
 
 		if (i == 0)
 		{
-			//printf("(x>0 and y>0):\n");
-			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) // || ((pointarr[i].point_x < 0) || (pointarr[i].point_y < 0)))
+			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) 
 			{
 				puts("Invalid input, please try again");
 				return false;
@@ -21,31 +19,58 @@ bool getRectanglePoints(POINTS pointarr[], int n)
 
 		if (i == 1)
 		{
-			//printf("(x<0 and y>0):\n");
-			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) // || ((pointarr[i].point_x > 0) || (pointarr[i].point_y < 0)))
+			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2) )
 			{
 				puts("Invalid input, please try again");
 				return false;
+			}
+
+			else
+			{
+				if(((pointarr[i].point_x == pointarr[i - 1].point_x) && (pointarr[i].point_y == pointarr[i - 1].point_y)))
+				{
+					puts("Please do not enter one point twice");
+					return false;
+				}
 			}
 		}
 
 		if (i == 2)
 		{
-			//printf("(x<0 and y<0):\n");
-			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) // || ((pointarr[i].point_x > 0) || (pointarr[i].point_y > 0)))
+			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) 
 			{
 				puts("Invalid input, please try again");
 				return false;
+			}
+
+			else
+			{
+				if (((pointarr[i].point_x == pointarr[i - 1].point_x) && (pointarr[i].point_y == pointarr[i - 1].point_y)) ||
+					((pointarr[i].point_x == pointarr[i - 2].point_x) && (pointarr[i].point_y == pointarr[i - 2].point_y)))
+				{
+					puts("Please do not enter one point twice");
+					return false;
+				}
 			}
 		}
 
 		if (i == 3)
 		{
-			//printf("(x>0 and y<0):\n");
-			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) // || ((pointarr[i].point_x < 0) || (pointarr[i].point_y > 0)))
+			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) 
 			{
 				puts("Invalid input, please try again");
 				return false;
+			}
+
+			else
+			{
+				if (((pointarr[i].point_x == pointarr[i - 1].point_x) && (pointarr[i].point_y == pointarr[i - 1].point_y)) ||
+					((pointarr[i].point_x == pointarr[i - 2].point_x) && (pointarr[i].point_y == pointarr[i - 2].point_y)) || 
+					((pointarr[i].point_x == pointarr[i - 3].point_x) && (pointarr[i].point_y == pointarr[i - 3].point_y)))
+				{
+					puts("Please do not enter one point twice");
+					return false;
+				}
 			}
 		}
 	}
@@ -129,3 +154,91 @@ void doThesePointsMakeARectangle(POINTS a, POINTS b, POINTS c, POINTS d)
 		printf("\nThe area of this rectangle is: %.2lf\nThe perimeter of this rectangle is %.2lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
 	}
 }
+
+
+
+
+
+
+//Previous input function
+
+//bool getRectanglePoints(POINTS pointarr[], int n)
+//{
+//	puts("Enter your 4 points: "); //they can enter the points in any order they want
+//	for (int i = 0; i < n; i++)
+//	{
+//
+//		printf("Point %d (x,y)\n", i + 1); // for quadrant% d ", i + 1, i + 1);
+//
+//		if (i == 0)
+//		{
+//			//printf("(x>0 and y>0):\n");
+//			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) // || ((pointarr[i].point_x < 0) || (pointarr[i].point_y < 0)))
+//			{
+//				puts("Invalid input, please try again");
+//				return false;
+//			}
+//		}
+//
+//		if (i == 1)
+//		{
+//			//printf("(x<0 and y>0):\n");
+//			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) // || ((pointarr[i].point_x > 0) || (pointarr[i].point_y < 0)))
+//			{
+//				puts("Invalid input, please try again");
+//				return false;
+//			}
+//		}
+//
+//		if (i == 2)
+//		{
+//			//printf("(x<0 and y<0):\n");
+//			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) // || ((pointarr[i].point_x > 0) || (pointarr[i].point_y > 0)))
+//			{
+//				puts("Invalid input, please try again");
+//				return false;
+//			}
+//		}
+//
+//		if (i == 3)
+//		{
+//			//printf("(x>0 and y<0):\n");
+//			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) // || ((pointarr[i].point_x < 0) || (pointarr[i].point_y > 0)))
+//			{
+//				puts("Invalid input, please try again");
+//				return false;
+//			}
+//		}
+//	}
+//	return true;
+//}
+
+
+
+
+
+//Original rectangle function - this one is the lower points option 
+//if (getRectanglePoints(points, NUMPOINT))
+//{
+//	double dist12 = rectangleDist(points[0], points[1]);
+//	double dist23 = rectangleDist(points[1], points[2]);
+//	double dist34 = rectangleDist(points[2], points[3]);
+//	double dist14 = rectangleDist(points[0], points[3]);
+//	double dist24 = rectangleDist(points[1], points[3]);
+//	double dist13 = rectangleDist(points[0], points[2]);
+
+//	char* resultrectangle = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
+
+
+//	if (resultrectangle == "The points do NOT make a rectangle")
+//	{
+//		printf_s("%s\n", resultrectangle);
+//		printf("\nThe perimeter of this shape is: %.2lf\n", perimeterRectangle(dist12, dist23, dist34, dist14));
+
+//	}
+//	else
+//	{
+//		printf_s("%s\n", resultrectangle);
+//		printf("\nThe area of this rectangle is: %.2lf\nThe perimeter of this rectangle is %.2lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));
+//	}
+//}
