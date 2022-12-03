@@ -86,11 +86,6 @@ namespace TestCases
 	};
 }
 
-
-
-//  triangle test cases - please note the AnglesOfTriangle function appears to need correction. 
-
-
 namespace TestCases
 {
 	TEST_CLASS(TriangleTypeTestCases) // testing analyzeTriangle
