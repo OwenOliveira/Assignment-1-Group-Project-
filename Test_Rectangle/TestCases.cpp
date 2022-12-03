@@ -50,7 +50,39 @@ namespace TestCases
 			Assert::AreEqual("The points do NOT make a rectangle", result);
 		}
 
+		TEST_METHOD(Test3_isRectangle_Functionality)
+		{
+			//This is testing the isRectangle function, whether the points form a rectangle or not (should NOT form a rectangle in this case)
 
+			POINTS points[SIZE] = { {6,2}, {-5,2}, {-8,-6}, {5,-2} };
+
+			double dist12 = rectangleDist(points[0], points[1]);
+			double dist23 = rectangleDist(points[1], points[2]);
+			double dist34 = rectangleDist(points[2], points[3]);
+			double dist14 = rectangleDist(points[0], points[3]);
+			double dist24 = rectangleDist(points[1], points[3]);
+			double dist13 = rectangleDist(points[0], points[2]);
+
+			char* result = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
+			Assert::AreNotEqual("The points make a rectangle", result);
+		}
+
+		TEST_METHOD(Test4_isRectangle_Functionality)
+		{
+			//This is testing the isRectangle function, whether the points form a rectangle or not (should form a rectangle in this case)
+
+			POINTS points[SIZE] = { {6,0}, {6,2}, {2,2}, {2,0} };
+
+			double dist12 = rectangleDist(points[0], points[1]);
+			double dist23 = rectangleDist(points[1], points[2]);
+			double dist34 = rectangleDist(points[2], points[3]);
+			double dist14 = rectangleDist(points[0], points[3]);
+			double dist24 = rectangleDist(points[1], points[3]);
+			double dist13 = rectangleDist(points[0], points[2]);
+
+			char* result = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
+			Assert::AreNotEqual("The points do NOT make a rectangle", result);
+		}
 	};
 }
 
@@ -243,7 +275,7 @@ namespace AnglesOfTriangle
 	{
 	public:
 		/* This is testing the anglesOfTriangle function */
-		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral_true)
+		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral)
 		{
 			double side1 = 6.0;
 			double side2 = 6.0;
@@ -256,7 +288,7 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		TEST_METHOD(Test2_AnglesOfTrianglesTest_Equilateral_true)
+		TEST_METHOD(Test2_AnglesOfTrianglesTest_Equilateral)
 		{
 			double side1 = 3.0;
 			double side2 = 4.0;
@@ -269,7 +301,7 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		TEST_METHOD(Test3_AnglesOfTrianglesTest_Equilateral_true)
+		TEST_METHOD(Test3_AnglesOfTrianglesTest_Equilateral)
 		{
 			double side1 = 30.0;
 			double side2 = 40.0;
@@ -292,10 +324,10 @@ namespace AnglesOfTriangle
 
 			double sum = 180.0;
 
-			Assert::AreEqual(sum, result);
+			Assert::AreNotEqual(sum, result);
 		}
 
-		TEST_METHOD(Test5_AnglesOfTrianglesTest_Equilateral_false)
+		TEST_METHOD(Test5_AnglesOfTrianglesTest_Equilateral)
 		{
 			double side1 = 2.0;
 			double side2 = 4.0;
@@ -308,7 +340,7 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		TEST_METHOD(Test6_AnglesOfTrianglesTest_Equilateral_false)
+		TEST_METHOD(Test6_AnglesOfTrianglesTest_Equilateral)
 		{
 			double side1 = -2.0;
 			double side2 = 4.0;
