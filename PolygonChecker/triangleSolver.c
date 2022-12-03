@@ -82,7 +82,7 @@ double anglesOfTriangle(double a, double b, double c)
 		sum = angleA + angleB + angleC;
 		if (angleA + angleB + angleC != 180)
 		{
-			printf("Then angles you have entered don't make a triangle!\n");
+			printf("The sides entered do not form a triangle!\n");
 		}
 		else
 		{
