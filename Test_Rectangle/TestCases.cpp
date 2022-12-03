@@ -69,14 +69,14 @@ namespace TestCases
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not, 
 			if yes what kind of triangle (should NOT form a triangle in this case)*/
 			
-			int side1;
-			int side2;
-			int side3;
+			double side1;
+			double side2;
+			double side3;
 			char* result;
 
-			side1 = 4;
-			side2 = 4;
-			side3 = -1;
+			side1 = 4.0;
+			side2 = 4.0;
+			side3 = -1.0;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -88,14 +88,14 @@ namespace TestCases
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 			if yes what kind of triangle (should form a triangle in this case)*/
 
-			int side1;
-			int side2;
-			int side3;
+			double side1;
+			double side2;
+			double side3;
 			char* result;
 
-			side1 = 4;
-			side2 = 4;
-			side3 = 4;
+			side1 = 4.0;
+			side2 = 4.0;
+			side3 = 4.0;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -106,14 +106,14 @@ namespace TestCases
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 			if yes what kind of triangle (should form an equilateral triangle in this case)*/
 
-			int side1;
-			int side2;
-			int side3;
+			double side1;
+			double side2;
+			double side3;
 			char* result;
 
-			side1 = 4;
-			side2 = 4;
-			side3 = 4;
+			side1 = 4.0;
+			side2 = 4.0;
+			side3 = 4.0;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -125,14 +125,14 @@ namespace TestCases
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 			if yes what kind of triangle (should NOT form an equilateral triangle in this case)*/
 
-			int side1;
-			int side2;
-			int side3;
+			double side1;
+			double side2;
+			double side3;
 			char* result;
 
-			side1 = 4;
-			side2 = 7;
-			side3 = 4;
+			side1 = 4.0;
+			side2 = 7.0;
+			side3 = 4.0;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -144,14 +144,14 @@ namespace TestCases
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 			if yes what kind of triangle (should form an isosceles triangle in this case)*/
 
-			int side1;
-			int side2;
-			int side3;
+			double side1;
+			double side2;
+			double side3;
 			char* result;
 
-			side1 = 5;
-			side2 = 5;
-			side3 = 3;
+			side1 = 5.0;
+			side2 = 5.0;
+			side3 = 3.0;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -163,14 +163,14 @@ namespace TestCases
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 		    if yes what kind of triangle (should form an isosceles triangle in this case)*/
 
-			int side1;
-			int side2;
-			int side3;
+			double side1;
+			double side2;
+			double side3;
 			char* result;
 
-			side1 = 5;
-			side2 = 8;
-			side3 = 5;
+			side1 = 5.0;
+			side2 = 8.0;
+			side3 = 5.0;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -182,14 +182,14 @@ namespace TestCases
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 		    if yes what kind of triangle (should NOT form an isosceles triangle in this case)*/
 
-			int side1;
-			int side2;
-			int side3;
+			double side1;
+			double side2;
+			double side3;
 			char* result;
 
-			side1 = 5;
-			side2 = 8;
-			side3 = 7;
+			side1 = 5.0;
+			side2 = 8.0;
+			side3 = 7.0;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -202,14 +202,14 @@ namespace TestCases
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 		    if yes what kind of triangle (should form a scalene triangle in this case)*/
 
-			int side1;
-			int side2;
-			int side3;
+			double side1;
+			double side2;
+			double side3;
 			char* result;
 
-			side1 = 4;
-			side2 = 5;
-			side3 = 6;
+			side1 = 4.0;
+			side2 = 5.0;
+			side3 = 6.0;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -221,14 +221,14 @@ namespace TestCases
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not,
 			if yes what kind of triangle (should NOT form a scalene triangle in this case)*/
 
-			int side1;
-			int side2;
-			int side3;
+			double side1;
+			double side2;
+			double side3;
 			char* result;
 
-			side1 = 4;
-			side2 = 4;
-			side3 = 9;
+			side1 = 4.0;
+			side2 = 4.0;
+			side3 = 9.0;
 
 			result = analyzeTriangle(side1, side2, side3);
 
@@ -242,6 +242,7 @@ namespace AnglesOfTriangle
 	TEST_CLASS(AnglesOfTriangle) // testing angles of triangle for 180 (equilateral sides)
 	{
 	public:
+		/* This is testing the anglesOfTriangle function */
 		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral_true)
 		{
 			double side1 = 6.0;
@@ -268,20 +269,7 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		TEST_METHOD(Test3_AnglesOfTrianglesTest_Equilateral_false)
-		{
-			double side1 = 1.0;
-			double side2 = 5.0;
-			double side3 = 9.0;
-
-			double result = anglesOfTriangle(side1, side2, side3);
-
-			double sum = 180.0;
-
-			Assert::AreEqual(sum, result);
-		}
-
-		TEST_METHOD(Test4_AnglesOfTrianglesTest_Equilateral_true)
+		TEST_METHOD(Test3_AnglesOfTrianglesTest_Equilateral_true)
 		{
 			double side1 = 30.0;
 			double side2 = 40.0;
@@ -294,11 +282,11 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		TEST_METHOD(Test5_AnglesOfTrianglesTest_Equilateral_false)
+		TEST_METHOD(Test4_AnglesOfTrianglesTest_Equilateral_false)
 		{
-			double side1 = 2.0;
-			double side2 = 2.0;
-			double side3 = 6.0;
+			double side1 = 1.0;
+			double side2 = 5.0;
+			double side3 = 9.0;
 
 			double result = anglesOfTriangle(side1, side2, side3);
 
@@ -307,7 +295,7 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		TEST_METHOD(Test6_AnglesOfTrianglesTest_Equilateral_true)
+		TEST_METHOD(Test5_AnglesOfTrianglesTest_Equilateral_false)
 		{
 			double side1 = 2.0;
 			double side2 = 4.0;
@@ -320,7 +308,7 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		TEST_METHOD(Test7_AnglesOfTrianglesTest_Equilateral_false)
+		TEST_METHOD(Test6_AnglesOfTrianglesTest_Equilateral_false)
 		{
 			double side1 = -2.0;
 			double side2 = 4.0;
