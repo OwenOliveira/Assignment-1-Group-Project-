@@ -20,7 +20,7 @@ namespace TestCases
 		{
 			//Testing the isRectangle function, whether the points form a rectangle or not (should form a rectangle in this case)
 
-			POINTS points[SIZE] = { {-5,2}, {5,2}, {-5,-2}, {5,-2} };
+			POINTS points[SIZE] = { {5,2}, {-5,2}, {-5,-2}, {5,-2} };
 
 			double dist12 = rectangleDist(points[0], points[1]);
 			double dist23 = rectangleDist(points[1], points[2]);
@@ -37,7 +37,7 @@ namespace TestCases
 		{
 			//This is testing the isRectangle function, whether the points form a rectangle or not (should NOT form a rectangle in this case)
 			
-			POINTS points[SIZE] = { {-5,-2}, {-5,2}, {5,-2}, {6,2} };
+			POINTS points[SIZE] = { {6,2}, {-5,2}, {-5,-2}, {5,-2} };
 
 			double dist12 = rectangleDist(points[0], points[1]);
 			double dist23 = rectangleDist(points[1], points[2]);
@@ -54,7 +54,7 @@ namespace TestCases
 		{
 			//This is testing the isRectangle function, whether the points form a rectangle or not (should NOT form a rectangle in this case)
 
-			POINTS points[SIZE] = { {-8,-6}, {6,2}, {-5,2}, {5,-2} };
+			POINTS points[SIZE] = { {6,2}, {-5,2}, {-8,-6}, {5,-2} };
 
 			double dist12 = rectangleDist(points[0], points[1]);
 			double dist23 = rectangleDist(points[1], points[2]);
@@ -71,7 +71,7 @@ namespace TestCases
 		{
 			//This is testing the isRectangle function, whether the points form a rectangle or not (should form a rectangle in this case)
 
-			POINTS points[SIZE] = { {6,0}, {6,2}, {2,2}, {2,0} };
+			POINTS points[SIZE] = { {6,2}, {2,2}, {2,0}, {6,0} };
 
 			double dist12 = rectangleDist(points[0], points[1]);
 			double dist23 = rectangleDist(points[1], points[2]);
