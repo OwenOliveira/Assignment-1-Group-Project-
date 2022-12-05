@@ -314,7 +314,7 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		TEST_METHOD(Test4_AnglesOfTrianglesTest_Equilateral_false)
+		TEST_METHOD(Test4_AnglesOfTrianglesTest_NotTriangle)
 		{
 			double side1 = 1.0;
 			double side2 = 5.0;
