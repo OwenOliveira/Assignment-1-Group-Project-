@@ -12,6 +12,7 @@ bool getRectanglePoints(POINTS pointarr[], int n)  //getRectanglePoints function
 		{
 			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) 
 			{
+				while (getchar() != '\n');
 				puts("Invalid input, please try again");
 				return false;
 			}
@@ -21,6 +22,7 @@ bool getRectanglePoints(POINTS pointarr[], int n)  //getRectanglePoints function
 		{
 			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2) )
 			{
+				while (getchar() != '\n');
 				puts("Invalid input, please try again");
 				return false;
 			}
@@ -39,6 +41,7 @@ bool getRectanglePoints(POINTS pointarr[], int n)  //getRectanglePoints function
 		{
 			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) 
 			{
+				while (getchar() != '\n');
 				puts("Invalid input, please try again");
 				return false;
 			}
@@ -58,6 +61,7 @@ bool getRectanglePoints(POINTS pointarr[], int n)  //getRectanglePoints function
 		{
 			if ((scanf_s("%lf %lf", &pointarr[i].point_x, &pointarr[i].point_y) != 2)) 
 			{
+				while (getchar() != '\n');
 				puts("Invalid input, please try again");
 				return false;
 			}
