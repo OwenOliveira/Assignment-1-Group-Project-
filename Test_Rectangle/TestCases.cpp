@@ -88,10 +88,10 @@ namespace TestCases
 
 namespace TestCases
 {
-	TEST_CLASS(TriangleTypeTestCases) // testing analyzeTriangle
+	TEST_CLASS(TriangleTypeTestCases) 
 	{
 	public:
-		TEST_METHOD(Test1_analyzeTriangle_NotTriangle_Functionality) // testing for Equilateral triangle
+		TEST_METHOD(Test1_analyzeTriangle_NotTriangle_Functionality) 
 		{
 			/*This is testing the analyzeTriangle function, whether the given sides form a triangle or not, 
 			if yes what kind of triangle (should NOT form a triangle in this case)*/
@@ -266,12 +266,13 @@ namespace TestCases
 
 namespace AnglesOfTriangle
 {
-	TEST_CLASS(AnglesOfTriangle) // testing angles of triangle for 180 (equilateral sides)
+	TEST_CLASS(AnglesOfTriangle) 
 	{
 	public:
-		/* This is testing the anglesOfTriangle function, If the input three sides form a triangle,
-		this function returns the sum of the three angles(180), and if not a triangle, it returns 0. */
-		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral)
+		/* This is testing the anglesOfTriangle function, If the three entered sides form a triangle,
+		this function returns the sum of the three angles(180), and if not a triangle, it returns 0. 
+		Here the sides should form an equilateral triangle*/
+		TEST_METHOD(Test1_AnglesOfTrianglesTest_Equilateral) 
 		{
 			double side1 = 6.0;
 			double side2 = 6.0;
@@ -284,10 +285,12 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		/* This is testing the anglesOfTriangle function, If the input three sides form a triangle,
-		this function returns the sum of the three angles(180), and if not a triangle, it returns 0. */
-		TEST_METHOD(Test2_AnglesOfTrianglesTest_Scalene)
+		TEST_METHOD(Test2_AnglesOfTrianglesTest_Scalene)  
 		{
+			/* This is testing the anglesOfTriangle function, If the three entered sides form a triangle,
+			this function returns the sum of the three angles(180), and if not a triangle, it returns 0.
+			Here the sides should form an scalenel triangle*/ 
+
 			double side1 = 3.0;
 			double side2 = 4.0;
 			double side3 = 5.0;
@@ -299,10 +302,13 @@ namespace AnglesOfTriangle
 			Assert::AreEqual(sum, result);
 		}
 
-		/* This is testing the anglesOfTriangle function, If the input three sides form a triangle,
-		this function returns the sum of the three angles(180), and if not a triangle, it returns 0. */
+		
 		TEST_METHOD(Test3_AnglesOfTrianglesTest_Isosceles)
 		{
+			/* This is testing the anglesOfTriangle function, If the three entered sides form a triangle,
+			this function returns the sum of the three angles(180), and if not a triangle, it returns 0.
+			Here the sides should form an isosceles triangle*/
+
 			double side1 = 30.0;
 			double side2 = 40.0;
 			double side3 = 40.0;
@@ -316,6 +322,10 @@ namespace AnglesOfTriangle
 
 		TEST_METHOD(Test4_AnglesOfTrianglesTest_NotTriangle)
 		{
+			/* This is testing the anglesOfTriangle function, If the three entered sides form a triangle,
+			this function returns the sum of the three angles(180), and if not a triangle, it returns 0.
+			Here the sides should NOT form a triangle*/
+
 			double side1 = 1.0;
 			double side2 = 5.0;
 			double side3 = 9.0;
@@ -327,10 +337,13 @@ namespace AnglesOfTriangle
 			Assert::AreNotEqual(sum, result);
 		}
 
-		/* This is testing the anglesOfTriangle function, If the input three sides form a triangle,
-		this function returns the sum of the three angles(180), and if not a triangle, it returns 0. */
 		TEST_METHOD(Test5_AnglesOfTrianglesTest_NotTriangle)
 		{
+
+			/* This is testing the anglesOfTriangle function, If the three entered sides form a triangle,
+			this function returns the sum of the three angles(180), and if not a triangle, it returns 0.
+			Here the sides should NOT form a triangle*/
+
 			double side1 = 2.0;
 			double side2 = 4.0;
 			double side3 = 6.0;
@@ -342,10 +355,15 @@ namespace AnglesOfTriangle
 			Assert::AreNotEqual(sum, result);
 		}
 
-		/* This is testing the anglesOfTriangle function, If the input three sides form a triangle,
-		this function returns the sum of the three angles(180), and if not a triangle, it returns 0. */
+
 		TEST_METHOD(Test6_AnglesOfTrianglesTest_NotTriangle)
 		{
+
+			/* This is testing the anglesOfTriangle function, If the three entered sides form a triangle,
+			this function returns the sum of the three angles(180), and if not a triangle, it returns 0.
+			Here the sides should NOT form a triangle*/
+
+
 			double side1 = -2.0;
 			double side2 = 4.0;
 			double side3 = -6.0;

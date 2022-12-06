@@ -10,7 +10,7 @@ double* getTriangleSides(double* triangleSides) {
 	{
 		do
 		{
-			// display the side that a user enters
+			// display the sides that a user should enters
 			if (i == 0)
 				printf("First side(a): ");
 			else if (i == 1)

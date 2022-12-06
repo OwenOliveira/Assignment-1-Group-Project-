@@ -28,55 +28,59 @@ int main() {
 
 		case 2:  //added case 2 to the switch statement for the rectangle
 			printf_s("Rectangle selected.\n"); //Users can enter their points in any order they want and the program will connect them without any crossover - this means that we completed the more points option 
-			getRectanglePoints(points, NUMPOINT);
-
-			POINTS vector12 = vectors(points[1], points[0]); 
-			POINTS vector14 = vectors(points[3], points[0]); 
-			POINTS vector13 = vectors(points[2], points[0]); 
-
-			double dotproduct1214 = dotproduct(vector12, vector14); 
-			double dotproduct1213 = dotproduct(vector12, vector13); 
-			double dotproduct1314 = dotproduct(vector13, vector14); 
-
-			double magnitude12 = magnitude(vector12); 
-			double magnitude14 = magnitude(vector14); 
-			double magnitude13 = magnitude(vector13); 
-
-			double angle1 = angle(dotproduct1214, magnitude12, magnitude14);
-			double angle2 = angle(dotproduct1213, magnitude12, magnitude13); 
-			double angle3 = angle(dotproduct1314, magnitude13, magnitude14); 
-
-			if (angle1 > angle2 && angle1 > angle3) //the program finds the largest angle between the three vectors (made up of the four points they entered) and connects the three points that make up the angle. This means that the connected points will not cross
-			{
-				POINTS point2 = points[0];
-				POINTS point1 = points[1];
-				POINTS point3 = points[3];
-				POINTS point4 = points[2];
-
 			
-				doThesePointsMakeARectangle(point1, point2, point3, point4); //this function finds the distance between these points, determines if these distances make up a rectangle and prints if they are a rectangle or not. I added this function to make the program more repetitive
-
-			}
-			else if (angle2 > angle1 && angle2 > angle3)
+			if (getRectanglePoints(points, NUMPOINT))
 			{
-				POINTS point2 = points[0];
-				POINTS point1 = points[1];
-				POINTS point3 = points[2];
-				POINTS point4 = points[3];
+				POINTS vector12 = vectors(points[1], points[0]);
+				POINTS vector14 = vectors(points[3], points[0]);
+				POINTS vector13 = vectors(points[2], points[0]);
 
-				doThesePointsMakeARectangle(point1, point2, point3, point4);
+				double dotproduct1214 = dotproduct(vector12, vector14);
+				double dotproduct1213 = dotproduct(vector12, vector13);
+				double dotproduct1314 = dotproduct(vector13, vector14);
 
+				double magnitude12 = magnitude(vector12);
+				double magnitude14 = magnitude(vector14);
+				double magnitude13 = magnitude(vector13);
+
+				double angle1 = angle(dotproduct1214, magnitude12, magnitude14);
+				double angle2 = angle(dotproduct1213, magnitude12, magnitude13);
+				double angle3 = angle(dotproduct1314, magnitude13, magnitude14);
+
+				if (angle1 > angle2 && angle1 > angle3) //the program finds the largest angle between the three vectors (made up of the four points they entered) and connects the three points that make up the angle. This means that the connected points will not cross
+				{
+					POINTS point2 = points[0];
+					POINTS point1 = points[1];
+					POINTS point3 = points[3];
+					POINTS point4 = points[2];
+
+
+					doThesePointsMakeARectangle(point1, point2, point3, point4); //this function finds the distance between these points, determines if these distances make up a rectangle and prints if they are a rectangle or not. I added this function to make the program more repetitive
+
+				}
+				else if (angle2 > angle1 && angle2 > angle3)
+				{
+					POINTS point2 = points[0];
+					POINTS point1 = points[1];
+					POINTS point3 = points[2];
+					POINTS point4 = points[3];
+
+					doThesePointsMakeARectangle(point1, point2, point3, point4);
+
+				}
+				else if (angle3 > angle1 && angle3 > angle2)
+				{
+					POINTS point2 = points[0];
+					POINTS point1 = points[2];
+					POINTS point3 = points[3];
+					POINTS point4 = points[1];
+
+					doThesePointsMakeARectangle(point1, point2, point3, point4);
+				}
 			}
-			else if (angle3 > angle1 && angle3 > angle2)
-			{
-				POINTS point2 = points[0];
-				POINTS point1 = points[2];
-				POINTS point3 = points[3];
-				POINTS point4 = points[1];
 
-				doThesePointsMakeARectangle(point1, point2, point3, point4);
-			}
 			break;
+
 		case 0:
 			continueProgram = false;
 			break;
