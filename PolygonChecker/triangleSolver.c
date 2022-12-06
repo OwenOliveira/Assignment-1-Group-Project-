@@ -68,27 +68,27 @@ char* analyzeTriangle(double a, double b, double c) {
 }
 
 
-double anglesOfTriangle(double a, double b, double c)
+double anglesOfTriangle(double a, double b, double c)	// anglesOfTriangle will passt through three doubles
 {
-	double sum = 0;
-	double angleA, angleB, angleC;
-	const double AnglePi = 180.0 / 3.1415926;
+	double sum = 0;										// Initialize int and set it to 0
+	double angleA, angleB, angleC;						// Initialize 3 doubles for the three angles
+	const double AnglePi = 180.0 / 3.1415926;			// Create a variable for pi
 
 	if (a > 0 && b > 0 && c > 0 && longestSide(a, b, c) < ((a + b + c) - longestSide(a, b, c)))		// angles will be calculated when only it's a triangle,
 	{
-		angleA = acos(((b * b) + (c * c) - (a * a)) / (2.0 * b * c)) * AnglePi;
-		angleB = acos(((a * a) + (c * c) - (b * b)) / (2.0 * a * c)) * AnglePi;
-		angleC = 180.0 - (angleA + angleB);
-		sum = angleA + angleB + angleC;
+		angleA = acos(((b * b) + (c * c) - (a * a)) / (2.0 * b * c)) * AnglePi;	// Use this equation to calculate the first angle and store as angleA
+		angleB = acos(((a * a) + (c * c) - (b * b)) / (2.0 * a * c)) * AnglePi; // Use this equation to calculate the second angle and store as angleB
+		angleC = 180.0 - (angleA + angleB);										// Use this equation to calculate the third angle and store as angleC
+		sum = angleA + angleB + angleC;											// Sum will equal all three angles added togeather
 
-		printf("The angle \"A\" is %g dgree.\n", angleA);
+		printf("The angle \"A\" is %g dgree.\n", angleA);						// Three different print statements for the three angles 
 		printf("The angle \"B\" is %g dgree.\n", angleB);
 		printf("The angle \"C\" is %g dgree.\n", angleC);
 
-		return sum;
+		return sum;										// Return the value of sum
 
 	}
-	else			// not a triangle
-		return sum;	// sum = 0
+	else												// not a triangle
+		return sum;										// sum = 0
 
 }
