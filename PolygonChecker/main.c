@@ -29,7 +29,7 @@ int main() {
 		case 2:  //added case 2 to the switch statement for the rectangle
 			printf_s("Rectangle selected.\n"); //Users can enter their points in any order they want and the program will connect them without any crossover - this means that we completed the more points option 
 			
-			if (getRectanglePoints(points, NUMPOINT))
+			if (getRectanglePoints(points, NUMPOINT))  //if getRectanglePoints returns true and the points entered are valid
 			{
 				POINTS vector12 = vectors(points[1], points[0]);
 				POINTS vector14 = vectors(points[3], points[0]);
