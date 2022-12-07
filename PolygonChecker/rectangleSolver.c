@@ -111,47 +111,47 @@ double CalculateArea(double dista, double distb)
 
 POINTS vectors(POINTS a, POINTS b)
 {
-	POINTS vectors = { a.point_x - b.point_x, a.point_y - b.point_y };
-	return vectors;
+	POINTS vectors = { a.point_x - b.point_x, a.point_y - b.point_y }; //a vector helps us determine the position of a point in relation to another 
+	return vectors; 
 }
 
 double dotproduct(POINTS a, POINTS b)
 {
-	double dotproduct = (a.point_x * b.point_x) + (a.point_y * b.point_y);
+	double dotproduct = (a.point_x * b.point_x) + (a.point_y * b.point_y); //we need to calculate the dotproduct for the angle calculation
 		return dotproduct;
 }
 
 double magnitude(POINTS a)
 {
-	double magnitude = sqrt((a.point_x * a.point_x) + (a.point_y * a.point_y));
+	double magnitude = sqrt((a.point_x * a.point_x) + (a.point_y * a.point_y)); //we need to calculate the magnitude for the angle equation
 	return magnitude;
 }
 
 double angle(double dotprod, double magA, double magB)
 {
-	double angle = acos(dotprod / ((magA) * (magB)));
+	double angle = acos(dotprod / ((magA) * (magB))); //finds the angle between two points using their dotproduct and their individual magniudes
 	return angle;
 } 
 
 
-void doThesePointsMakeARectangle(POINTS a, POINTS b, POINTS c, POINTS d)
+void doThesePointsMakeARectangle(POINTS a, POINTS b, POINTS c, POINTS d) //when this function is called all of the points are in the correct order 
 {
-	double dist12 = rectangleDist(a, b);
+	double dist12 = rectangleDist(a, b); 
 	double dist23 = rectangleDist(b, c);
 	double dist34 = rectangleDist(c, d);
 	double dist14 = rectangleDist(a, d);
 	double dist24 = rectangleDist(b, d);
 	double dist13 = rectangleDist(a, c);
 
-	char* resultrectangle = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);
+	char* resultrectangle = isRectangle(dist12, dist34, dist14, dist23, dist24, dist13);  
 
-	if (resultrectangle == "The points do NOT make a rectangle")
+	if (resultrectangle == "The points do NOT make a rectangle") //isRectangle returns a string so we check if the strings are equal
 	{
 		printf_s("%s\n", resultrectangle);
 		printf("\nThe perimeter of this shape is: %.2lf\n", perimeterRectangle(dist12, dist23, dist34, dist14));
 
 	}
-	else
+	else //enter if the points do make a rectangle 
 	{
 		printf_s("%s\n", resultrectangle);
 		printf("\nThe area of this rectangle is: %.2lf\nThe perimeter of this rectangle is %.2lf\n", CalculateArea(dist12, dist14), perimeterRectangle(dist12, dist23, dist34, dist14));

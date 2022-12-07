@@ -31,15 +31,15 @@ int main() {
 			
 			if (getRectanglePoints(points, NUMPOINT))  //if getRectanglePoints returns true and the points entered are valid
 			{
-				POINTS vector12 = vectors(points[1], points[0]);
-				POINTS vector14 = vectors(points[3], points[0]);
+				POINTS vector12 = vectors(points[1], points[0]); //we are comparing the first point the user entered to the other three
+				POINTS vector14 = vectors(points[3], points[0]); //this is why points[0] is called in all three of the vector calculations
 				POINTS vector13 = vectors(points[2], points[0]);
 
 				double dotproduct1214 = dotproduct(vector12, vector14);
 				double dotproduct1213 = dotproduct(vector12, vector13);
 				double dotproduct1314 = dotproduct(vector13, vector14);
 
-				double magnitude12 = magnitude(vector12);
+				double magnitude12 = magnitude(vector12); 
 				double magnitude14 = magnitude(vector14);
 				double magnitude13 = magnitude(vector13);
 
@@ -49,7 +49,7 @@ int main() {
 
 				if (angle1 > angle2 && angle1 > angle3) //the program finds the largest angle between the three vectors (made up of the four points they entered) and connects the three points that make up the angle. This means that the connected points will not cross
 				{
-					POINTS point2 = points[0];
+					POINTS point2 = points[0]; //these four statements order the points in the correct order based on the angles calculated
 					POINTS point1 = points[1];
 					POINTS point3 = points[3];
 					POINTS point4 = points[2];
