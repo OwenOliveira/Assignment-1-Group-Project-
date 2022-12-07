@@ -70,7 +70,7 @@ char* analyzeTriangle(double a, double b, double c) {
 
 double anglesOfTriangle(double a, double b, double c)	// anglesOfTriangle will passt through three doubles
 {
-	double sum = 0;										// Initialize int and set it to 0
+	double sum = 0;										// Initialize double and set it to 0
 	double angleA, angleB, angleC;						// Initialize 3 doubles for the three angles
 	const double AnglePi = 180.0 / 3.1415926;			// Create a variable for pi
 
